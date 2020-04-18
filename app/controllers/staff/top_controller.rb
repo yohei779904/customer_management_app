@@ -1,5 +1,7 @@
-class Staff::TopController < ApplicationController
+class Staff::TopController < Staff::Base
+  # このコントローラーでは、current_administratorメソッドが実行されないようにする。
+  skip_before_action :authorize
+
   def index
-    render action: 'index'
   end
 end
